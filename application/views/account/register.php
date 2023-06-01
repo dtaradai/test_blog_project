@@ -1,27 +1,33 @@
-<h1>Register page</h1>
-<form id="registration-form">
-  <label for="name">Name:</label>
-  <input type="text" id="name" required><br>
+  <section class="direction">
+    <div class="container">
+      <div class="registration">
+      <h3 class="registration__title title">Registration page</h3>
+      <form id="form" action="/account/register" method="post">
+        <label for="name">Name:</label>
+        <input name="name" type="text" id="name"><br>
 
-  <label for="surname">Surname:</label>
-  <input type="text" id="surname" required><br>
+        <label for="surname">Surname:</label>
+        <input name="surname" type="text" id="surname"><br>
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" required><br>
+        <label for="email">Email:</label>
+        <input name="email" type="text" id="email"><br>
 
-  <label for="password">Password:</label>
-  <input type="password" id="password" required><br>
+        <label for="password">Password:</label>
+        <input name="password" type="password" id="password"><br>
 
-  <label for="confirm-password">Password again:</label>
-  <input type="password" id="confirm-password" required><br>
+        <label for="confirm-password">Password again:</label>
+        <input name="confirm-password" type="password" id="confirm-password"><br>
 
-  <input type="submit" value="Register">
-</form>
+        <input type="submit" value="Register">
+      </form>
 
-<div id="success-message" style="display: none;">
-  Реєстрація пройшла успішно!
-</div>
+      <div id="success-message" style="display: none;">
+        Реєстрація пройшла успішно!
+      </div>
 
-<div id="error-message" style="display: none;">
-  Виникла помилка при реєстрації.
-</div>
+      <div id="error-message" style="display: none;">
+        Виникла помилка при реєстрації.
+      </div>
+      </div>
+    </div>
+  </section>

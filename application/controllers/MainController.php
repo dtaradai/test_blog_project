@@ -8,6 +8,8 @@ class MainController extends Controller
 {
   public function indexAction()
   {
-    $this->view->render('Page Home');
+    $data['users'] = $this->model->getUsers();
+
+    $this->view->render('Page Home', $data);
   }
 }

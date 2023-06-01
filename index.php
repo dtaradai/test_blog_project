@@ -1,5 +1,6 @@
 <?php 
 
+require_once './config.php';
 require_once './application/lib/Dev.php';
 use application\core\Router;
 
