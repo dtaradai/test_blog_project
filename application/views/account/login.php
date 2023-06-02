@@ -1,19 +1,27 @@
-<h1>Login php</h1>
+  <section class="registration">
+    <div class="container">
+      <div class="registration__inner">
+        <h3 class="registration__title title">Login page</h3>
+        <form class="form" id="form" action="/account/register" method="post">
+          <label class="form__label" for="name">Name:</label>
+          <input class="form__input" name="name" type="text" id="name"><br>
 
-<form id="form" action="/account/login" method="post">
-  <label for="email">Email:</label>
-  <input type="email" id="email" required><br>
+          <label class="form__label" for="password">Password:</label>
+          <input class="form__input" name="password" type="password" id="password"><br>
 
-  <label for="password">Password:</label>
-  <input type="password" id="password" required><br>
+          <div class="form__submit-container">
+            <input class="form__inpit-submit button" type="submit" value="Sign In">
+          </div>
 
-  <input type="submit" value="Login">
-</form>
+        </form>
 
-<div id="success-message" style="display: none;">
-  Реєстрація пройшла успішно!
-</div>
+        <div id="success-message" style="display: none;">
+          Авторизація пройшла успішно!
+        </div>
 
-<div id="error-message" style="display: none;">
-  Виникла помилка при реєстрації.
-</div>
+        <div id="error-message" style="display: none;">
+          Виникла помилка при авторизації.
+        </div>
+      </div>
+    </div>
+  </section>

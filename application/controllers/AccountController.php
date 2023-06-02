@@ -9,11 +9,11 @@ class AccountController extends Controller
   public function loginAction()
   {
     if (!empty($_POST)) {
-      $response = array('success' => true);
+      $response = array('success' => true, 'message' => 'ok');
       echo json_encode($response);
-      exit;
+    } else {
+      $this->view->render('Page login');
     }
-    $this->view->render('Page login');
   }
 
   public function registerAction()
@@ -21,8 +21,8 @@ class AccountController extends Controller
     if (!empty($_POST)) {
       $response = array('success' => true, 'message' => 'ok');
       echo json_encode($response);
-      exit;
+    } else {
+      $this->view->render('Page register');
     }
-    $this->view->render('Page register');
   }
 }
