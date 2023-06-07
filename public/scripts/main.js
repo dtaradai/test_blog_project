@@ -10,11 +10,14 @@ $(document).ready(function () {
       data: form.serialize(),
       success: function (response) {
         let responseParse = jQuery.parseJSON(response);
-        if (responseParse.success) {
+        if (responseParse.status = 'success') {
           $('#registration-form').hide();
           $('#success-message').show();
+          alert('Status: ' + responseParse.status + ', Message: ' + responseParse.message)
+          console.log(response);
         } else {
           $('#error-message').show();
+          console.log(response);
         }
       },
       error: function () {

@@ -29,23 +29,23 @@ return [
   ],
 
   //AdminController
-  'login' => [
+  'admin' => [
     'controller' => 'admin',
     'action' => 'login',
   ],
-  'logout' => [
+  'admin/logout' => [
     'controller' => 'admin',
     'action' => 'logout',
   ],
-  'add' => [
+  'admin/add' => [
     'controller' => 'admin',
     'action' => 'add',
   ],
-  'edit' => [
+  'admin/edit' => [
     'controller' => 'admin',
     'action' => 'edit',
   ],
-  'delete' => [
+  'admin/delete' => [
     'controller' => 'admin',
     'action' => 'delete',
   ],

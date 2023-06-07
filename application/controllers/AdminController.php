@@ -6,24 +6,35 @@ use application\core\Controller;
 
 class AdminController extends Controller
 {
+  public function __construct($route)
+  {
+    parent::__construct($route);
+    $this->view->layout = 'admin';
+  }
+
   public function loginAction()
   {
     $this->view->render('Login');
+  }  
+  
+  public function logoutAction()
+  {
+    $this->view->render('Logout');
   }
 
-  public function aboutAction()
+  public function addAction()
   {
-    $this->view->render('About');
+    $this->view->render('Add');
   }
 
-   public function contactAction()
+   public function editAction()
   {
-    $this->view->render('Contact');
+    $this->view->render('Edit');
   }
 
-   public function postAction()
+   public function deleteAction()
   {
-    $this->view->render('Post');
+    $this->view->render('Delete');
   }
 
 }

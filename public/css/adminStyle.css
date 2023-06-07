@@ -1,0 +1,86 @@
+*{
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  display: inline-block;
+}
+ul,
+li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.container{
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px; 
+}
+body{
+  font-family: 'PT Serif', serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #5e5e5e;
+  background-color: bisque;
+}
+header{
+  font-family: 'Roboto', sans-serif;
+}
+
+.login {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.5px;
+  color: #242424;
+  padding: 12px 0;
+}
+
+.login__title {
+  padding-top: 30px;
+}
+
+.form-box {
+  max-width: 450px;
+  padding-top: 30px 0;
+  background-color: darkorange;
+  margin: 100px auto 0;
+}
+
+.form-login {
+  padding: 30px 30px 50px;
+}
+.form-login__item{
+  line-height: 36px;
+  color: #282828;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+.form-login__input{
+  margin-bottom: 8px;
+  outline: none;
+  height: 40px;
+  border: 1px solid #e6e6e6;
+  padding: 0px 10px;
+}
+
+.form-login__submit{
+  background-color: brown;
+  float: right;
+  font-size: 14px;
+  line-height: 24px;
+  color: #fff;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  padding: 8px 30px 8px 24px;
+  border: 1px solid #ffc222;
+  position: relative;
+  outline: none;
+}
