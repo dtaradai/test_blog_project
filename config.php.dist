@@ -1,13 +1,13 @@
 <?php 
 // HTTP
-define('HTTP_SERVER', 'http://test_hot_sale/');
+define('HTTP_SERVER', 'http://site_url/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'dima');
-define('DB_PASSWORD', '3112234');
-define('DB_DATABASE', 'test_work');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'pass');
+define('DB_DATABASE', 'db_name');
 
 // DIR
 define('DIR_IMAGES', HTTP_SERVER . 'public/images/');

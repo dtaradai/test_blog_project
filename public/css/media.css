@@ -56,17 +56,20 @@
     padding-right: 10px;
   }
 
-  .direction__item-img {
+  .direction__item-img,
+  .post__item-img {
     width: 40%;
   }
 }
 
 @media (max-width: 860px) {
-  .direction__item {
+  .direction__item,
+  .post__item {
     flex-wrap: wrap;
   }
 
-  .direction__item-img {
+  .direction__item-img,
+  .post__item-img {
     width: 80%;
     margin: 0 auto 30px;
     order: -1;
@@ -194,6 +197,7 @@
 
   .tools__title,
   .direction__item-title,
+  .post__item-title,
   .team__title,
   .blog__title,
   .registration__title {
@@ -201,11 +205,13 @@
     line-height: 30px;
   }
 
-  .direction__item {
+  .direction__item,
+  .post__item {
     margin-bottom: 40px;
   }
 
-  .direction {
+  .direction,
+  .post{
     padding: 40px 0 0px;
   }
 

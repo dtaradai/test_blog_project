@@ -32,16 +32,16 @@
 
           <ul class="menu__list">
             <li class="menu__list-item">
-              <a class="menu__list-link" href="<?php echo HTTP_SERVER ?>">Main</a>
+              <a class="menu__list-link" href="/">Main</a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="<?php echo HTTP_SERVER ?>">Customers</a>
+              <a class="menu__list-link" href="contact">Contact</a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="<?php echo HTTP_SERVER ?>">Pricing</a>
+              <a class="menu__list-link" href="about">About</a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="<?php echo HTTP_SERVER ?>">Resources</a>
+              <a class="menu__list-link" href="post">Blog</a>
             </li>
           </ul>
         </nav>

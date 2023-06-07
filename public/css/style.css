@@ -205,49 +205,59 @@ button,
   margin: 0 auto;
 }
 
-.direction {
+.direction, 
+.post {
   padding: 120px 0 100px;
 }
 
-.direction__item {
+.direction__item,
+.post__item {
   display: flex;
   justify-content: space-between;
   margin-bottom: 100px;
 }
 
-.direction__item-content {
+.direction__item-content
+.post__item-content {
   max-width: 486px;
 }
 
-.direction__item-pretitle {
+.direction__item-pretitle,
+.post__item-pretitle {
   margin-bottom: 3px;
 }
 
-.direction__item-title {
+.direction__item-title,
+.post__item-title {
   font-size: 36px;
   line-height: 54px;
   font-weight: 700;
   margin-bottom: 22px;
 }
 
-.direction__item-subtitle {
+.direction__item-subtitle,
+.post__item-subtitle {
   font-weight: 700;
   margin-bottom: 12px;
 }
 
-.direction__item-titletext {
+.direction__item-titletext,
+.post__item-titletext {
   margin-bottom: 30px;
 }
 
-.direction__item-text {
+.direction__item-text,
+.post__item-text {
   margin-bottom: 25px;
 }
 
-.direction__list {
+.direction__list,
+.post__list {
   list-style: none;
 }
 
-.direction__list-item {
+.direction__list-item,
+.post__list-item {
   margin-bottom: 30px;
   padding-left: 65px;
   position: relative;

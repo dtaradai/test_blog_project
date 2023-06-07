@@ -4,11 +4,11 @@ namespace application\controllers;
 
 use application\core\Controller;
 
-class MainController extends Controller
+class AdminController extends Controller
 {
-  public function indexAction()
+  public function loginAction()
   {
-    $this->view->render('Home');
+    $this->view->render('Login');
   }
 
   public function aboutAction()
@@ -26,5 +26,4 @@ class MainController extends Controller
     $this->view->render('Post');
   }
 
-  
 }
