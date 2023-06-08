@@ -3,6 +3,7 @@
 namespace application\controllers;
 
 use application\core\Controller;
+use application\core\Mail;
 
 class MainController extends Controller
 {
@@ -19,7 +20,12 @@ class MainController extends Controller
    public function contactAction()
   {
     if (!empty($_POST)) {
-      $this->view->message('success', 'form ok');
+      if (!$this->model->contactValidate($_POST)) {
+        $this->view->message('error', $this->model->error);
+      }
+
+      Mail::sendMessage(trim($_POST['email']), EMAIL_DEFAULT, trim($_POST['message']), $_POST['subject']);
+      $this->view->message('success', 'Letter sent.');
     }
     $this->view->render('Contact');
   }

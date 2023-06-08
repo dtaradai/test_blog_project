@@ -13,6 +13,7 @@ return [
   ],
 
   'admin' => [
+    'index',
     'logout',
     'add',
     'edit',

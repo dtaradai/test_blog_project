@@ -2,7 +2,7 @@
   <div class="container">
     <div class="form-box">
       <h1 class="login__title title">Enter login and password</h1>
-      <form action="/admin/login" class="form-login" method="post">
+      <form action="/admin" class="form-login" method="post" id="form">
         <div class="form-login__item">
           <span class="form-login__span">Enter login</span>
           <input class="form-login__input" type="text" name="login" placeholder="login">

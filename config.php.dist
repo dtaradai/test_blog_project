@@ -1,6 +1,7 @@
 <?php 
 // HTTP
 define('HTTP_SERVER', 'http://site_url/');
+define('EMAIL_DEFAULT', 'default@gmail.com');
 
 // DB
 define('DB_DRIVER', 'mysqli');

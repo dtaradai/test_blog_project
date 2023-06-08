@@ -33,6 +33,10 @@ return [
     'controller' => 'admin',
     'action' => 'login',
   ],
+  'admin/index' => [
+    'controller' => 'admin',
+    'action' => 'index',
+  ],
   'admin/logout' => [
     'controller' => 'admin',
     'action' => 'logout',
