@@ -30,4 +30,20 @@ class Admin extends Model
     $admin = $this->db->row("SELECT * FROM `administrators` WHERE login = '" . $login . "'");
     return $admin;
   }
+
+  public function addPost($post) {
+    $params = [
+      'post_id' => NULL,
+      'title' => trim($post['title']),
+      'text' => trim($post['text']),
+      'img' =>''
+    ];
+
+    $this->db->query('INSERT INTO `posts` VALUES (:post_id, :title, :text, :img)', $params);
+    return $this->db->lastInsertId();
+  }
+
+  public function addImgToPost($imgName, $post_id) {
+    $this->db->query("UPDATE `posts` SET img = '" . $imgName . "' WHERE post_id = " . $post_id . "");
+  }
 }

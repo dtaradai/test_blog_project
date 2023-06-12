@@ -34,6 +34,14 @@ class View
     }
   }
 
+  public function load($file, $data = []) {
+    extract($data);
+    $path = 'application/views/' . $file . '.php';
+    if (file_exists($path)) {
+      require_once $path;
+    }
+  }
+
   public static function errorCode($code)
   {
     http_response_code($code);
@@ -47,7 +55,7 @@ class View
 
   public function redirect($url)
   {
-    header('location: ' . $url);
+    header('location: /' . $url);
     exit;
   }
 

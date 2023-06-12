@@ -32,3 +32,5 @@ if ($countAdmin === 0) {
   $sql = "INSERT INTO `administrators` (`login`, `password`, `email`) VALUES ('admin', 'admin', '" . EMAIL_DEFAULT . "')";
   $db->query($sql);
 }
+
+$db->query("CREATE TABLE IF NOT EXISTS `posts` (`post_id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(400) NOT NULL , `text` TEXT , `img` VARCHAR(255) NOT NULL , PRIMARY KEY (`post_id`)) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;");

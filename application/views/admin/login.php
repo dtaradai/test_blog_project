@@ -1,6 +1,6 @@
 <div class="login">
   <div class="container">
-    <div class="form-box">
+    <div class="form-box__login">
       <h1 class="login__title title">Enter login and password</h1>
       <form action="/admin" class="form-login" method="post" id="form">
         <div class="form-login__item">

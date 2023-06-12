@@ -38,7 +38,7 @@
               <a class="menu__list-link" href="contact">Contact</a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="about">About</a>
+              <a class="menu__list-link" href="admin">Admin</a>
             </li>
             <li class="menu__list-item">
               <a class="menu__list-link" href="post">Blog</a>

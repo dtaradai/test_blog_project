@@ -1,1 +1,1 @@
-<h1>Main admin</h1>
+<h1>Index</h1>

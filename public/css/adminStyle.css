@@ -1,31 +1,78 @@
-*{
+* {
   box-sizing: border-box;
 }
-a{
+
+a {
   text-decoration: none;
   display: inline-block;
 }
+
 ul,
-li{
+li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.container{
-  max-width: 1170px;
+
+.container {
+  max-width: 1370px;
   margin: 0 auto;
-  padding: 0 15px; 
+  padding: 0 15px;
 }
-body{
+
+body {
   font-family: 'PT Serif', serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  color: #5e5e5e;
+  color: #272727;
   background-color: bisque;
 }
-header{
+
+.header,
+.sidebar {
+  background-color: darkorange;
+  padding: 10px;
+}
+
+.header {
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: end;
+}
+
+.content-inner {
+  display: flex;
+}
+
+.sidebar {
+  width: 20%;
+  height: 100vh;
+}
+
+.menu__logo {
+  margin-bottom: 40px;
+}
+
+.content {
+  width: 80%;
+  background-color: #e6e6e6;
+}
+
+.header a,
+.sidebar a {
+  color: #282828;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.header__link {
+  padding-right: 20px;
+}
+
+.sidebar__link {
+  padding-left: 20px;
+  margin-bottom: 10px;
 }
 
 .login {
@@ -46,7 +93,74 @@ header{
   padding-top: 30px;
 }
 
-.form-box {
+.__title {
+  padding-top: 30px;
+}
+
+.form__box {
+  padding: 30px;
+}
+
+.form__box label {
+  line-height: 36px;
+  font-weight: 500;
+  color: #282828;
+  font-family: 'Roboto', sans-serif;
+}
+
+.form__box input {
+  margin-bottom: 8px;
+  outline: none;
+  height: 40px;
+  border: 1px solid #e6e6e6;
+  padding: 0px 10px;
+}
+
+.form__box textarea {
+  outline: none;
+  border: 1px solid #e6e6e6;
+  padding: 10px;
+  height: 208px;
+  resize: none;
+  margin-bottom: 40px;
+}
+
+.form__box input,
+.form__box textarea {
+  display: block;
+  width: 90%;
+}
+
+.form__button--contain {
+  display: flex;
+  justify-content: end;
+}
+
+.default-btn {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  padding: 8px 30px 8px 24px;
+  border: 1px solid #000;
+  position: relative;
+  color: #fff;
+}
+
+.default-btn {
+  margin-left: 20px;
+}
+
+.btn-save {
+  background-color: forestgreen;
+}
+
+.btn-delete {
+  background-color: red;
+}
+
+.form-box__login {
   max-width: 450px;
   padding-top: 30px 0;
   background-color: darkorange;
@@ -56,14 +170,16 @@ header{
 .form-login {
   padding: 30px 30px 50px;
 }
-.form-login__item{
+
+.form-login__item {
   line-height: 36px;
   color: #282828;
   font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: space-between;
 }
-.form-login__input{
+
+.form-login__input {
   margin-bottom: 8px;
   outline: none;
   height: 40px;
@@ -71,7 +187,7 @@ header{
   padding: 0px 10px;
 }
 
-.form-login__submit{
+.form-login__submit {
   background-color: brown;
   float: right;
   font-size: 14px;

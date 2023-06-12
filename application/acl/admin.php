@@ -15,6 +15,7 @@ return [
   'admin' => [
     'index',
     'logout',
+    'posts',
     'add',
     'edit',
     'delete'
