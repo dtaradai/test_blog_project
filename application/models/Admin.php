@@ -31,19 +31,67 @@ class Admin extends Model
     return $admin;
   }
 
-  public function addPost($post) {
+  public function addPost($post)
+  {
     $params = [
       'post_id' => NULL,
-      'title' => trim($post['title']),
-      'text' => trim($post['text']),
-      'img' =>''
+      'title' => $post['title'],
+      'text' => $post['text']
     ];
 
-    $this->db->query('INSERT INTO `posts` VALUES (:post_id, :title, :text, :img)', $params);
+    $this->db->query('INSERT INTO `posts` VALUES (:post_id, :title, :text)', $params);
     return $this->db->lastInsertId();
   }
 
-  public function addImgToPost($imgName, $post_id) {
-    $this->db->query("UPDATE `posts` SET img = '" . $imgName . "' WHERE post_id = " . $post_id . "");
+  public function updatePost($post, $post_id)
+  {
+    $params = [
+      'post_id' => $post_id,
+      'title' => $post['title'],
+      'text' => $post['text'],
+    ];
+
+    $this->db->query('UPDATE `posts` SET title = :title, text = :text WHERE post_id = :post_id', $params);
+    return $this->db->lastInsertId();
+  }
+
+  public function postExists($post_id)
+  {
+    $params = [
+      'post_id' => $post_id
+    ];
+
+    return $this->db->column("SELECT post_id FROM `posts` WHERE post_id = :post_id", $params);
+  }
+
+  public function getPost($post_id)
+  {
+    $params = [
+      'post_id' => $post_id
+    ];
+
+    return $this->db->row("SELECT * FROM `posts` WHERE post_id = :post_id", $params);
+  }
+
+  public function getPosts($filter)
+  {
+    $params = [
+      'max' => $filter['limit'],
+      'start' => $filter['start'],
+    ];
+    return $this->db->rows("SELECT * FROM `posts` ORDER BY post_id DESC LIMIT :start, :max", $params);
+  }
+
+  public function postsCount()
+  {
+    return $this->db->column("SELECT COUNT(post_id) FROM `posts`");
+  }
+
+  public function deletePost($post_id)
+  {
+    $params = [
+      'post_id' => $post_id
+    ];
+    $this->db->column("DELETE FROM `posts` WHERE post_id = :post_id", $params);
   }
 }

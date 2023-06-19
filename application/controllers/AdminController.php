@@ -3,6 +3,7 @@
 namespace application\controllers;
 
 use application\core\Controller;
+use application\lib\Pagination;
 
 class AdminController extends Controller
 {
@@ -57,45 +58,108 @@ class AdminController extends Controller
       if (!$this->postValidate($_POST)) {
         $this->view->message('error', $this->error);
       }
-      $post_id = $this->model->addPost($_POST);
+
+      $post = [
+        'post_id' => NULL,
+        'title' => trim($_POST['title']),
+        'text' => trim($_POST['text']),
+      ];
+
+      $post_id = $this->model->addPost($post);
 
       if (!$post_id) {
         $this->view->message('error', 'Request processing error');
       }
 
-      $fileName = $_FILES['img']['name'];
+      $this->uploadFile($_FILES['img']['tmp_name'], $post_id);
 
-      if ($this->uploadFile($_FILES['img']['tmp_name'], $fileName)) {
-        $this->model->addImgToPost($fileName, $post_id);
-      }
-
-      $this->view->message('success', 'id: ' . $post_id);
+      $this->view->location('admin/posts');
     }
 
     $data = [];
     $data['admin'] = $this->isAdmin();
+    $data['action'] = HTTP_SERVER . 'admin/add/';
+
     $this->view->render('Add post', $data);
   }
 
   public function editAction()
   {
+    if (!$this->model->postExists($this->route['id'])) {
+      $this->view->errorCode(404);
+    }
+
+    if (!empty($_POST)) {
+      if (!$this->postValidate($_POST)) {
+        $this->view->message('error', $this->error);
+      }
+
+      $post = [
+        'post_id' => $this->route['id'],
+        'title' => trim($_POST['title']),
+        'text' => trim($_POST['text']),
+      ];
+
+      $this->model->updatePost($post, $this->route['id']);
+
+      if (isset($_FILES['img']['tmp_name'])) {
+        $this->uploadFile($_FILES['img']['tmp_name'], $this->route['id']);
+      }
+
+      $this->view->location('admin/posts');
+    }
+
     $data = [];
     $data['admin'] = $this->isAdmin();
+    $post = $this->model->getPost($this->route['id']);
+
+    $data['post'] = [
+      'title' => htmlspecialchars($post['title'], ENT_QUOTES),
+      'text' => htmlspecialchars($post['text'], ENT_QUOTES),
+    ];
+
+    $data['action'] = HTTP_SERVER . 'admin/edit/' . $post['post_id'];
+    $data['delete'] = HTTP_SERVER . 'admin/delete/' . $post['post_id'];
     $this->view->render('Edit post', $data);
   }
 
   public function deleteAction()
   {
-    $data = [];
-    $data['admin'] = $this->isAdmin();
-    $this->view->render('Delete', $data);
+    if (!$this->model->postExists($this->route['id'])) {
+      $this->view->errorCode(404);
+    }
+    
+    $filePath = 'images/posts/' . $this->route['id'] . '.jpg';
+    unlink($filePath);
+
+    $this->model->deletePost($this->route['id']);
+    $this->view->redirect('admin/posts');
   }
 
   public function postsAction()
   {
+
+    $limit = LIMIT;
+    $pagination = new Pagination($this->route, $this->model->postsCount(), $limit);
     $data = [];
+
+    $filter = [
+      'start' => ((isset($this->route['page']) ? $this->route['page'] : 1) -1 ) * $limit,
+      'limit' => $limit,
+    ];
+
+    $posts = $this->model->getPosts($filter);
     $data['admin'] = $this->isAdmin();
-    $data['posts'] = [];
+
+    foreach ($posts as $post) {
+      $data['posts'][] = [
+        'title' => htmlspecialchars($post['title'], ENT_QUOTES),
+        'text' => htmlspecialchars($post['text'], ENT_QUOTES),
+        'url' => HTTP_SERVER . 'admin/edit/' . $post['post_id']
+      ];
+    }
+    
+    $data['pagination'] = $pagination->get();
     $this->view->render('Posts', $data);
   }
 
@@ -120,7 +184,7 @@ class AdminController extends Controller
       return false;
     }
 
-    if (empty($_FILES['img']['tmp_name'])) {
+    if ($this->route['action'] === 'add' && empty($_FILES['img']['tmp_name'])) {
       $this->error = 'No image selected';
       return false;
     }
@@ -130,6 +194,6 @@ class AdminController extends Controller
 
   public function uploadFile($path, $name)
   {
-    return move_uploaded_file($path, 'images/posts/' . $name);
+    return move_uploaded_file($path, 'images/posts/' . $name . '.jpg');
   }
 }

@@ -17,11 +17,19 @@ class Db
   public function query($sql, $params = [])
   {
     $stmt = $this->db->prepare($sql);
-    foreach ($params as $key => $value) {
-      $stmt->bindValue(':' . $key, $value);
+    if (!empty($params)) {
+      foreach ($params as $key => $value) {
+        if (is_int($value)) {
+          $type = PDO::PARAM_INT;
+        } else {
+          $type = PDO::PARAM_STR;
+        }
+
+        $stmt->bindValue(':' . $key, $value, $type);
+      }
     }
-     $stmt->execute();
-     return $stmt;
+    $stmt->execute();
+    return $stmt;
   }
 
   public function rows($sql, $params = [])
@@ -39,7 +47,8 @@ class Db
     return $this->query($sql, $params)->fetchColumn();
   }
 
-  public function lastInsertId() {
+  public function lastInsertId()
+  {
     return $this->db->lastInsertId();
   }
 }

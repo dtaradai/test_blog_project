@@ -32,16 +32,16 @@
 
           <ul class="menu__list">
             <li class="menu__list-item">
-              <a class="menu__list-link" href="/">Main</a>
+              <a class="menu__list-link" href="<?=$headerMenu['main']?>">Main</a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="contact">Contact</a>
+              <a class="menu__list-link" href="<?=$headerMenu['contact']?>">Contact</a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="admin">Admin</a>
+              <a class="menu__list-link" href="<?=$headerMenu['admin']?>">Admin</a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="post">Blog</a>
+              <a class="menu__list-link" href="<?=$headerMenu['main/posts']?>">Blog</a>
             </li>
           </ul>
         </nav>

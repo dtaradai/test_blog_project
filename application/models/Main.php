@@ -28,4 +28,17 @@ class Main extends Model{
     $users = $this->db->rows('SELECT * FROM `users`');
     return $users;
   }
+
+  public function postsCount() {
+    return $this->db->column("SELECT COUNT(post_id) FROM `posts`");
+  }
+
+  public function getPosts($filter) {
+
+    $params = [
+      'max' => $filter['limit'],
+      'start' => $filter['start'],
+    ];
+    return $this->db->rows("SELECT * FROM `posts` ORDER BY post_id DESC LIMIT :start, :max", $params);
+  }
 }

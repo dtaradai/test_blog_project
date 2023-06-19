@@ -24,7 +24,7 @@
               </a>
             </li>
             <li><a class="sidebar__link" href="<?php echo HTTP_SERVER ?>admin/add">Add post</a></li>
-            <li><a class="sidebar__link" href="<?php echo HTTP_SERVER ?>admin/posts">Posts</a></li>
+            <li><a class="sidebar__link" href="<?php echo HTTP_SERVER ?>admin/posts/1">Posts</a></li>
           </ul>
         </nav>
       </div>

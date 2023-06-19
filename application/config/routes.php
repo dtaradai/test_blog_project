@@ -17,6 +17,10 @@ return [
     'controller' => 'main',
     'action' => 'post',
   ],
+  'main/posts/{page:\d+}' => [
+    'controller' => 'main',
+    'action' => 'posts',
+  ],
   
   //AccountController
   'account/login' => [
@@ -41,7 +45,7 @@ return [
     'controller' => 'admin',
     'action' => 'logout',
   ],
-  'admin/posts' => [
+  'admin/posts/{page:\d+}' => [
     'controller' => 'admin',
     'action' => 'posts',
   ],

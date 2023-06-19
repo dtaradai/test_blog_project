@@ -19,12 +19,15 @@ class View
   {
     extract($data);
     $path = 'application/views/' . $this->path . '.php';
-    $header = 'header';
-    $footer = 'footer';
+
 
     if ($this->layout === 'admin') {
-     $header = 'adminHeader';
-     $footer = 'adminFooter';
+      $header = 'adminHeader';
+      $footer = 'adminFooter';
+    } else {
+      $headerMenu = $this->headerMenu();
+      $header = 'header';
+      $footer = 'footer';
     }
 
     if (file_exists($path)) {
@@ -34,7 +37,8 @@ class View
     }
   }
 
-  public function load($file, $data = []) {
+  public function load($file, $data = [])
+  {
     extract($data);
     $path = 'application/views/' . $file . '.php';
     if (file_exists($path)) {
@@ -59,11 +63,23 @@ class View
     exit;
   }
 
-  public function message($status, $message = '') {
+  public function message($status, $message = '')
+  {
     exit(json_encode(['status' => $status, 'message' => $message]));
   }
 
-  public function location($url) {
+  public function location($url)
+  {
     exit(json_encode(['url' => $url]));
+  }
+
+  public function headerMenu()
+  {
+    return [
+      'main' => HTTP_SERVER,
+      'contact' => HTTP_SERVER . 'contact',
+      'main/posts' => HTTP_SERVER . 'main/posts/1',
+      'admin' => HTTP_SERVER . 'admin'
+    ];
   }
 }

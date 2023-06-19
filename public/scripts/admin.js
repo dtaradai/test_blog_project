@@ -12,10 +12,12 @@ $(document).ready(function () {
     });
 
     // Сбор данных о файле (будет немного отличаться для нескольких файлов)
-    var filesField = form.find('input[type="file"]');
-    var fileName = filesField.attr('name');
-    var file = filesField.prop('files')[0];
-    formData.append(fileName, file);
+    if (form.has('input[type="file"]').length) {
+      var filesField = form.find('input[type="file"]');
+      var fileName = filesField.attr('name');
+      var file = filesField.prop('files')[0];
+      formData.append(fileName, file);
+    }
 
     $.ajax({
       type: form.attr('method'),

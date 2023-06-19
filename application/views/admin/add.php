@@ -1,6 +1,6 @@
 <div class="form__box">
   <h1 class="login__title title"><?=$title?></h1>
-  <form action="/admin/add" enctype="multipart/form-data" class="" method="post" id="form">
+  <form action="<?=$action?>" enctype="multipart/form-data" class="" method="post" id="form">
     <label>
       Title
       <input type="text" name="title">
@@ -15,7 +15,6 @@
     </label>
     <div class="form__button--contain">
       <button class="default-btn btn-save" type="submit">Save</button>
-      <button class="default-btn btn-delete" type="submit">Delete</button>
     </div>
   </form>
 </div>

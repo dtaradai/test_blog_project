@@ -5,6 +5,7 @@ return [
     'about',
     'contact',
     'post',
+    'posts',
     'login',
     'register',
   ],

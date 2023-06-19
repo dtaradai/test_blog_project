@@ -1,10 +1,18 @@
-* {
+html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 a {
   text-decoration: none;
   display: inline-block;
+  color: inherit;
 }
 
 ul,
@@ -12,6 +20,16 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
 }
 
 .container {
@@ -95,6 +113,31 @@ body {
 
 .__title {
   padding-top: 30px;
+}
+
+.content__box {
+  padding: 30px;
+}
+
+.posts-box {
+  border: 1px solid darkorange;
+  padding: 15px;
+}
+
+.post__item {
+  border-bottom: 1px solid #242424;
+  display: flex;
+  padding: 10px;
+}
+
+.post__item--preview {
+  width: 50px;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.post__item--link {
+  width: 700px;
 }
 
 .form__box {
@@ -199,4 +242,32 @@ body {
   border: 1px solid #ffc222;
   position: relative;
   outline: none;
+}
+
+.pagination__container {
+  margin-top: 20px;
+}
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  transition: background-color .4s;
+}
+
+.pagination a.active {
+  background-color: #ff9900;;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+.center {
+  text-align: center;
 }

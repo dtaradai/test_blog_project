@@ -33,4 +33,4 @@ if ($countAdmin === 0) {
   $db->query($sql);
 }
 
-$db->query("CREATE TABLE IF NOT EXISTS `posts` (`post_id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(400) NOT NULL , `text` TEXT , `img` VARCHAR(255) NOT NULL , PRIMARY KEY (`post_id`)) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;");
+$db->query("CREATE TABLE IF NOT EXISTS `posts` (`post_id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(400) NOT NULL , `text` TEXT , PRIMARY KEY (`post_id`)) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;");
