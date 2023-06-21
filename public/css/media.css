@@ -56,13 +56,17 @@
     padding-right: 10px;
   }
 
-  .direction__item-img,
-  .post__item-img {
+  .direction__item-img {
     width: 40%;
+  }
+
+  .posts__item-img {
+    width: 25%;
   }
 }
 
 @media (max-width: 860px) {
+
   .direction__item,
   .post__item {
     flex-wrap: wrap;
@@ -99,6 +103,20 @@
   .form__input {
     width: 70%;
   }
+
+  .posts__item {
+    margin-bottom: 20px;
+  }
+
+  .post__item-title {
+    font-size: 26px;
+    line-height: 40px;
+    margin-bottom: 12px;
+  }
+
+  .posts__item-text {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -115,7 +133,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 668px) {
   .form__label {
     width: 100%;
     top: 0px;
@@ -135,6 +153,20 @@
 
   .registration {
     padding: 45px 0 30px;
+  }
+
+  .posts__item-img img {
+    height: 125px;
+  }
+
+  .post__item-title {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 8px;
+  }
+
+  .post__item-pretitle {
+    font-size: 14px;
   }
 }
 
@@ -211,7 +243,7 @@
   }
 
   .direction,
-  .post{
+  .post {
     padding: 40px 0 0px;
   }
 
@@ -235,5 +267,13 @@
   .form__input {
     height: 34px;
     margin-bottom: 8px;
+  }
+
+  .posts__item-img {
+    display: none;
+  }
+
+  .posts__item-content {
+    width: 100%;
   }
 }

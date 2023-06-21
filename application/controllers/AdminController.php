@@ -63,6 +63,7 @@ class AdminController extends Controller
         'post_id' => NULL,
         'title' => trim($_POST['title']),
         'text' => trim($_POST['text']),
+        'date' => date("d.m.y")
       ];
 
       $post_id = $this->model->addPost($post);
@@ -98,6 +99,7 @@ class AdminController extends Controller
         'post_id' => $this->route['id'],
         'title' => trim($_POST['title']),
         'text' => trim($_POST['text']),
+        'date' => date("d.m.y")
       ];
 
       $this->model->updatePost($post, $this->route['id']);
@@ -155,7 +157,8 @@ class AdminController extends Controller
       $data['posts'][] = [
         'title' => htmlspecialchars($post['title'], ENT_QUOTES),
         'text' => htmlspecialchars($post['text'], ENT_QUOTES),
-        'url' => HTTP_SERVER . 'admin/edit/' . $post['post_id']
+        'url' => HTTP_SERVER . 'admin/edit/' . $post['post_id'],
+        'img' => HTTP_IMG . 'posts/' . $post['post_id'] . '.jpg',
       ];
     }
     

@@ -135,6 +135,13 @@ body {
   height: 100%;
   margin-right: 20px;
 }
+.post__item--preview img {
+  width: 50px;
+}
+
+.post__item--preview img:hover {
+  scale: 300%;
+}
 
 .post__item--link {
   width: 700px;

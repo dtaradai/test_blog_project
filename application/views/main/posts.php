@@ -6,18 +6,18 @@
             <div class="posts__item-content">
               <a href="<?= $post['url'] ?>">
                 <p class="post__item-pretitle">
-                  Effortless Validation for
+                  <?= $post['date'] ?>
                 </p>
                 <h3 class="post__item-title title">
                   <?= $post['title']; ?>
                 </h3>
-                <p class="posts__item-titletext">
+                <p class="posts__item-text">
                   <?= $post['text']; ?>
                 </p>
               </a>
             </div>
             <div class="posts__item-img">
-              <img  src="<?= $post['img']; ?>" alt="<?= $post['title']; ?>">
+              <img src="<?= $post['img']; ?>" alt="<?= $post['title']; ?>">
             </div>
           </div>
         <?php } ?>

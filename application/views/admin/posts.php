@@ -6,7 +6,7 @@
       <?php foreach ($posts as $post) { ?>
         <div class="post__item">
           <div class="post__item--preview">
-            <img src="" alt="img">
+            <img src="<?=$post['img'] ?>" alt="img">
           </div>
           <div class="post__item--link">
             <a href="<?= $post['url'] ?>" class="posts__link">

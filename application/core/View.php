@@ -78,7 +78,7 @@ class View
     return [
       'main' => HTTP_SERVER,
       'contact' => HTTP_SERVER . 'contact',
-      'main/posts' => HTTP_SERVER . 'main/posts/1',
+      'main/posts' => HTTP_SERVER . 'main/posts',
       'admin' => HTTP_SERVER . 'admin'
     ];
   }

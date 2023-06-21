@@ -36,10 +36,11 @@ class Admin extends Model
     $params = [
       'post_id' => NULL,
       'title' => $post['title'],
-      'text' => $post['text']
+      'text' => $post['text'],
+      'date' => $post['date']
     ];
 
-    $this->db->query('INSERT INTO `posts` VALUES (:post_id, :title, :text)', $params);
+    $this->db->query('INSERT INTO `posts` VALUES (:post_id, :title, :text, :date)', $params);
     return $this->db->lastInsertId();
   }
 
@@ -49,9 +50,10 @@ class Admin extends Model
       'post_id' => $post_id,
       'title' => $post['title'],
       'text' => $post['text'],
+      'date' => $post['date']
     ];
 
-    $this->db->query('UPDATE `posts` SET title = :title, text = :text WHERE post_id = :post_id', $params);
+    $this->db->query('UPDATE `posts` SET title = :title, text = :text, date = :date WHERE post_id = :post_id', $params);
     return $this->db->lastInsertId();
   }
 
