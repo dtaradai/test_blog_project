@@ -10,7 +10,7 @@ return [
     'register',
   ],
 
-  'autorize' => [
+  'authorize' => [
     'index',
   ],
 

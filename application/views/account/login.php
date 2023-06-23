@@ -2,9 +2,9 @@
     <div class="container">
       <div class="registration__inner">
         <h3 class="registration__title title">Login page</h3>
-        <form class="form" id="form" action="/account/register" method="post">
-          <label class="form__label" for="name">Name:</label>
-          <input class="form__input" name="name" type="text" id="name"><br>
+        <form class="form" id="form" action="/account/login" method="post">
+          <label class="form__label" for="email">Email:</label>
+          <input class="form__input" name="email" type="email" id="email"><br>
 
           <label class="form__label" for="password">Password:</label>
           <input class="form__input" name="password" type="password" id="password"><br>

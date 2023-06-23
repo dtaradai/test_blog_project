@@ -130,7 +130,7 @@ class AdminController extends Controller
     if (!$this->model->postExists($this->route['id'])) {
       $this->view->errorCode(404);
     }
-    
+
     $filePath = 'images/posts/' . $this->route['id'] . '.jpg';
     unlink($filePath);
 
@@ -146,13 +146,13 @@ class AdminController extends Controller
     $data = [];
 
     $filter = [
-      'start' => ((isset($this->route['page']) ? $this->route['page'] : 1) -1 ) * $limit,
+      'start' => ((isset($this->route['page']) ? $this->route['page'] : 1) - 1) * $limit,
       'limit' => $limit,
     ];
 
     $posts = $this->model->getPosts($filter);
     $data['admin'] = $this->isAdmin();
-
+    $data['posts'] = [];
     foreach ($posts as $post) {
       $data['posts'][] = [
         'title' => htmlspecialchars($post['title'], ENT_QUOTES),
@@ -161,7 +161,7 @@ class AdminController extends Controller
         'img' => HTTP_IMG . 'posts/' . $post['post_id'] . '.jpg',
       ];
     }
-    
+
     $data['pagination'] = $pagination->get();
     $this->view->render('Posts', $data);
   }

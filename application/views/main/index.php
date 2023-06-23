@@ -64,7 +64,7 @@
 
         </div>
       </div>
-      <a href="#" class="tools__link signUp">
+      <a href="account/register" class="tools__link signUp">
         SIGN UP NOW
       </a>
     </div>
@@ -324,8 +324,8 @@
     <div class="container">
 
       <div class="footer__inner">
-        <a class="logo" href="#">
-          <img class="logo__img" src="<?php echo DIR_IMAGES ?>logo.png" alt="logo">
+        <a class="logo" href="/">
+          <img class="logo__img" src="<?php echo DIR_IMAGES ?>logo.svg" alt="logo">
         </a>
 
         <div class="footer__menu">
@@ -334,22 +334,22 @@
           </h6>
           <ul class="footer__list">
             <li class="footer__munu-item">
-              <a href="#" class="footer__menu-link">
+              <a href="about" class="footer__menu-link">
                 About Us
               </a>
             </li>
             <li class="footer__munu-item">
-              <a href="#" class="footer__menu-link">
+              <a href="main/posts" class="footer__menu-link">
                 Blog
               </a>
             </li>
             <li class="footer__munu-item">
-              <a href="#" class="footer__menu-link">
+              <a href="contact" class="footer__menu-link">
                 Contact
               </a>
             </li>
             <li class="footer__munu-item">
-              <a href="#" class="footer__menu-link">
+              <a href="contact" class="footer__menu-link">
                 FAQ
               </a>
             </li>

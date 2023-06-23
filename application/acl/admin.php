@@ -4,7 +4,7 @@ return [
     'login'
   ],
 
-  'autorize' => [
+  'authorize' => [
     //
   ],
 

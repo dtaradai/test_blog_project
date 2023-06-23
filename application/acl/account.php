@@ -1,12 +1,13 @@
 <?php
 return [
   'all' => [
-    'main',
-    'login',
-    'register',
+    //
   ],
 
-  'autorize' => [],
+  'authorize' => [
+    'profile',
+    'logout'
+  ],
 
   'guest' => [
     'login',

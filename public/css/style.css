@@ -67,6 +67,13 @@ button,
   height: 78px;
 }
 
+.logo {
+  padding-top: 50px;
+}
+.logo__img {
+  height: 120px;
+}
+
 .menu {
   margin-left: auto;
 }

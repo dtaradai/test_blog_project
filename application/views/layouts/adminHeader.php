@@ -20,7 +20,7 @@
           <ul>
             <li class="menu__logo">
               <a href="<?php echo HTTP_SERVER ?>/admin">
-                <img src="<?php echo DIR_IMAGES ?>logo.png" alt="logo">
+                <img src="<?php echo DIR_IMAGES ?>logo.svg" alt="logo">
               </a>
             </li>
             <li><a class="sidebar__link" href="<?php echo HTTP_SERVER ?>admin/add">Add post</a></li>

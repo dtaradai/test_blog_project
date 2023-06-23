@@ -24,7 +24,7 @@ $conn->close();
 
 $db = new Db;
 
-$db->query("CREATE TABLE IF NOT EXISTS `administrators` (`admin_id` INT NOT NULL AUTO_INCREMENT , `login` VARCHAR(255) NOT NULL , `password` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , PRIMARY KEY (`admin_id`)) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;");
+$db->query("CREATE TABLE IF NOT EXISTS `administrators` (`admin_id` INT(11) NOT NULL AUTO_INCREMENT , `login` VARCHAR(255) NOT NULL , `password` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , PRIMARY KEY (`admin_id`)) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;");
 
 $countAdmin = (int)$db->column("SELECT count(*) FROM `administrators`");
 
@@ -33,4 +33,7 @@ if ($countAdmin === 0) {
   $db->query($sql);
 }
 
-$db->query("CREATE TABLE IF NOT EXISTS `posts` (`post_id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(400) NOT NULL , `text` TEXT , PRIMARY KEY (`post_id`)) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;");
+$db->query("CREATE TABLE IF NOT EXISTS `posts` (`post_id` INT(11) NOT NULL AUTO_INCREMENT , `title` VARCHAR(400) NOT NULL , `text` TEXT , `date` VARCHAR(125) DEFAULT '' , PRIMARY KEY (`post_id`)) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;");
+
+$db->query("CREATE TABLE IF NOT EXISTS `users` (`user_id` INT(11) NOT NULL AUTO_INCREMENT, `name` VARCHAR(255) NOT NULL , `surname` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `password` VARCHAR(255) NOT NULL , PRIMARY KEY (`user_id`)) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;");
+

@@ -30,6 +30,11 @@ class View
       $footer = 'footer';
     }
 
+    $authorize = false;
+    if (isset($_SESSION['authorize'])) {
+      $authorize = true;
+    }
+
     if (file_exists($path)) {
       require_once 'application/views/layouts/' . $header . '.php';
       require_once $path;

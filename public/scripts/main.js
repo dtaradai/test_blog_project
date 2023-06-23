@@ -11,13 +11,17 @@ $(document).ready(function () {
       success: function (response) {
         console.log(response);
         let responseParse = jQuery.parseJSON(response);
-        if (responseParse.status === 'success') {
-          $('#registration-form').hide();
-          $('#success-message').show();
-          alert('Status: ' + responseParse.status + ', Message: ' + responseParse.message)
+        if (responseParse.url) {
+          window.location.href = `/${responseParse.url}`
         } else {
-          $('#error-message').show();
-          alert('Status: ' + responseParse.status + ', Message: ' + responseParse.message)
+          if (responseParse.status === 'success') {
+            $('#registration-form').hide();
+            $('#success-message').show();
+            alert('Status: ' + responseParse.status + ', Message: ' + responseParse.message)
+          } else {
+            $('#error-message').show();
+            alert('Status: ' + responseParse.status + ', Message: ' + responseParse.message)
+          }
         }
       },
       error: function () {

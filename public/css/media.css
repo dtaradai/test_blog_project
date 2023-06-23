@@ -42,6 +42,10 @@
     padding-top: 30px;
   }
 
+  .logo {
+    padding-top: 0px;
+  }
+
   .top__inner {
     background-image: none;
   }

@@ -8,7 +8,7 @@
   <title>Productly</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href= "<?php echo DIR_CSS ?>reset.css">
+  <link rel="stylesheet" href="<?php echo DIR_CSS ?>reset.css">
   <link rel="stylesheet" href="<?php echo DIR_CSS ?>slick.css">
   <link rel="stylesheet" href="<?php echo DIR_CSS ?>jquery.fancybox.css">
   <link rel="stylesheet" href="<?php echo DIR_CSS ?>style.css">
@@ -22,7 +22,7 @@
       <div class="header__inner">
 
         <a class="logo" href="<?php echo HTTP_SERVER ?>">
-          <img class="logo__img" src="<?php echo DIR_IMAGES ?>logo.png" alt="logo">
+          <img class="logo__img" src="<?php echo DIR_IMAGES ?>logo.svg" alt="logo">
         </a>
 
         <nav class="menu">
@@ -32,23 +32,28 @@
 
           <ul class="menu__list">
             <li class="menu__list-item">
-              <a class="menu__list-link" href="<?=$headerMenu['main']?>">Main</a>
+              <a class="menu__list-link" href="<?= $headerMenu['main'] ?>">Main</a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="<?=$headerMenu['contact']?>">Contact</a>
+              <a class="menu__list-link" href="<?= $headerMenu['contact'] ?>">Contact</a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="<?=$headerMenu['admin']?>">Admin</a>
+              <a class="menu__list-link" href="<?= $headerMenu['admin'] ?>">Admin</a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="<?=$headerMenu['main/posts']?>">Blog</a>
+              <a class="menu__list-link" href="<?= $headerMenu['main/posts'] ?>">Blog</a>
             </li>
           </ul>
         </nav>
 
         <div class="user-nav">
-          <a class="user-nav__link signIn" href="<?php echo HTTP_SERVER ?>account/login">Sign In</a>
-          <a class="user-nav__link signUp" href="<?php echo HTTP_SERVER ?>account/register">Sign Up</a>
+          <?php if (!$authorize) { ?>
+            <a class="user-nav__link signIn" href="<?php echo HTTP_SERVER ?>account/login">Sign In</a>
+            <a class="user-nav__link signUp" href="<?php echo HTTP_SERVER ?>account/register">Sign Up</a>
+          <?php } else { ?>
+            <a class="user-nav__link signIn" href="<?php echo HTTP_SERVER ?>account/profile">Profile</a>
+            <a class="user-nav__link signUp" href="<?php echo HTTP_SERVER ?>account/logout">Log out</a>
+          <?php } ?>
         </div>
 
       </div>

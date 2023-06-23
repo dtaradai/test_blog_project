@@ -1,13 +1,16 @@
 <?php
 
 namespace application\models;
+
 use application\core\Model;
 
-class Main extends Model{
+class Main extends Model
+{
 
   public $error;
 
-  public function contactValidate($post) {
+  public function contactValidate($post)
+  {
     $name = trim($post['name']);
     $massage = trim($post['message']);
     if (mb_strlen($name) < 2 || mb_strlen($name) > 25) {
@@ -20,20 +23,23 @@ class Main extends Model{
       $this->error = 'The text must contain from 3 to 500 characters.';
       return false;
     }
-    
+
     return true;
   }
 
-  public function getUsers() {
+  public function getUsers()
+  {
     $users = $this->db->rows('SELECT * FROM `users`');
     return $users;
   }
 
-  public function postsCount() {
+  public function postsCount()
+  {
     return $this->db->column("SELECT COUNT(post_id) FROM `posts`");
   }
 
-  public function getPosts($filter) {
+  public function getPosts($filter)
+  {
 
     $params = [
       'max' => $filter['limit'],

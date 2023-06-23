@@ -36,6 +36,14 @@ return [
     'controller' => 'account',
     'action' => 'register',
   ],
+  'account/profile' => [
+    'controller' => 'account',
+    'action' => 'profile',
+  ],
+  'account/logout' => [
+    'controller' => 'account',
+    'action' => 'logout',
+  ],
 
   //AdminController
   'admin' => [

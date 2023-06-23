@@ -30,9 +30,9 @@ abstract class Controller {
     $this->acl = require_once 'application/acl/' . $this->route['controller'] . '.php';
     if ($this->isACL('all')) {
       return true;
-    } elseif (isset($_SESSION['authorize']['id']) && $this->isACL('authorize')) {
+    } elseif (isset($_SESSION['authorize']['user_id']) && $this->isACL('authorize')) {
       return true;
-    } elseif (!isset($_SESSION['authorize']['id']) && $this->isACL('guest')) {
+    } elseif (!isset($_SESSION['authorize']['user_id']) && $this->isACL('guest')) {
       return true;
     } elseif (isset($_SESSION['admin']) && $this->isACL('admin')) {
       return true;
