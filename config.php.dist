@@ -2,6 +2,7 @@
 // HTTP
 define('HTTP_SERVER', 'http://site_url/');
 define('EMAIL_DEFAULT', 'default@gmail.com');
+define('HTTP_IMG', HTTP_SERVER . 'images/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
@@ -15,5 +16,6 @@ define('DIR_IMAGES', HTTP_SERVER . 'public/images/');
 define('DIR_SCRIPTS',  HTTP_SERVER . 'public/scripts/');
 define('DIR_CSS',  HTTP_SERVER . 'public/css/');
 
-
+// SETINGS
+define('LIMIT', 3); // number of posts per page
 
